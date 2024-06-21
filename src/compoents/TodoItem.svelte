@@ -1,14 +1,15 @@
 <script>
+	import {todos} from '../store';
 	export let todo;
-	export let handleCheckTodo;
-	export let editMode;
-	export let handleChangeEditMode;
-	export let handleEditTodoItem;
-    export let handelRemoveTodo;
+
+	const handleCheckTodo = todos.checkTodo;
+	const handleEditTodoItem = todos.editTodo;
+	const handleChangeEditMode = todos.changeTodoEditMode;
+	const handelRemoveTodo = todos.removeTodo;
 </script>
 
 <input type="checkbox" bind:checked={todo.done} on:click={() => handleCheckTodo(todo.id)} />
-{#if editMode === todo.id}
+{#if $todos.editMode === todo.id}
 	<input type="text" bind:value={todo.content} on:focusout={() => handleEditTodoItem(todo)}/>
 {:else}
 	<span on:dblclick={() => handleChangeEditMode(todo.id)}>{todo.content}</span>
