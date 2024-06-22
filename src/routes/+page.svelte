@@ -1,14 +1,25 @@
 <script>
 	import MemberStatistics from './MemberStatistics.svelte';
+	import { onMount } from 'svelte';
+	import { isAuthenticated, login } from '../api/auth';
+
+	onMount(() => {
+		login();
+	});
 </script>
 
-<div class="app">
-	<div class="dashboard">
-		<div class="dashboard-items">
-			<MemberStatistics />
+{#if $isAuthenticated}
+	<div class="app">
+		<div class="dashboard">
+			<div class="dashboard-items">
+				<MemberStatistics />
+			</div>
 		</div>
 	</div>
-</div>
+{:else}
+	<p>Please login.</p>
+	<!-- 로그인 폼 등을 보여줄 수 있음 -->
+{/if}
 
 <style>
 	.app {

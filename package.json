@@ -33,6 +33,7 @@
 		"axios": "^1.7.2",
 		"chart.js": "^4.4.3",
 		"svelte-chartjs": "^3.1.5",
+		"svelte-query": "^0.0.1-alpha1",
 		"uuid": "^10.0.0"
 	}
 }
