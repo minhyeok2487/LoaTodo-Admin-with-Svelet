@@ -1,11 +1,11 @@
 <script>
 	import MemberStatistics from './MemberStatistics.svelte';
 	import { onMount } from 'svelte';
-	import { isAuthenticated, login } from '../api/auth';
+	import { isAuthenticated, isLogin } from '../api/auth';
 	import CharacterStatistics from './CharacterStatistics.svelte';
 
 	onMount(() => {
-		login();
+		isLogin();
 	});
 </script>
 

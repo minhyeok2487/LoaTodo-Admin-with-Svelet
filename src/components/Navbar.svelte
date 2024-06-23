@@ -1,6 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
-	import { isAuthenticated, member, login, logout } from '../api/auth'; // auth.js 파일에서 member와 login 함수 가져오기
+	import { isAuthenticated, member, socialLogin, logout } from '../api/auth'; // auth.js 파일에서 member와 login 함수 가져오기
 
 	// 로그인 상태를 확인하고, member store를 구독하여 회원 정보를 가져옴
 	onMount(() => {
@@ -18,9 +18,10 @@
 	<div class="user-info">
 		{#if $member}
 			Welcome, {$member.username}
-			<button>Logout</button>
+			<button on:click={logout}>Logout</button>
 		{:else}
 			로그인 해주세요.
+			<button on:click={socialLogin}>Google Login</button>
 		{/if}
 	</div>
 </nav>

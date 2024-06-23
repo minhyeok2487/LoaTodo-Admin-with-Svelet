@@ -1,7 +1,8 @@
-const API_BASE_URL = 'http://localhost:8080';
+export const API_BASE_URL = 'http://localhost:8080';
+export const BASE_URL = "https://api2.loatodo.com";
 
 function getAuthHeaders() {
-	const token = localStorage.getItem('token');
+	const token = localStorage.getItem('ACCESS_TOKEN');
 	return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
