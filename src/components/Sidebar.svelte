@@ -1,12 +1,12 @@
 <script>
-	import PeopleIcon from '@material-ui/icons/People';
-	import SettingsIcon from '@material-ui/icons/Settings';
-	import BarChartIcon from '@material-ui/icons/BarChart';
+	import FaPeople from 'svelte-icons/fa/FaUsers.svelte';
+	import FaSettings from 'svelte-icons/fa/FaCog.svelte';
+	import FaBarChart from 'svelte-icons/fa/FaChartBar.svelte';
 
 	let menuItems = [
-		{ name: 'Users', icon: PeopleIcon },
-		{ name: 'Settings', icon: SettingsIcon },
-		{ name: 'Reports', icon: BarChartIcon }
+		{ name: 'Users', icon: FaPeople },
+		{ name: 'Settings', icon: FaSettings },
+		{ name: 'Statistics', icon: FaBarChart }
 	];
 </script>
 
@@ -15,7 +15,9 @@
 		{#each menuItems as item}
 			<li>
 				<a href="/{item.name.toLowerCase()}">
-					<span class="icon"><item.icon /></span>
+					<span class="icon">
+						<svelte:component this={item.icon} />
+					</span>
 					{item.name}
 				</a>
 			</li>
@@ -53,7 +55,9 @@
 	}
 
 	.icon {
-		margin-right: 10px;
-		font-size: 1.2em;
-	}
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        margin-right: 0.5em;
+    }
 </style>

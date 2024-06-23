@@ -17,7 +17,7 @@
 	<a class="logo" href="/">Loatodo Dashboard</a>
 	<div class="user-info">
 		{#if $member}
-			Welcome, {$member.username}
+			Welcome, {$member.username.split('@')[0]} 
 			<button on:click={logout}>Logout</button>
 		{:else}
 			로그인 해주세요.
