@@ -2,6 +2,7 @@
 	import MemberStatistics from './MemberStatistics.svelte';
 	import { onMount } from 'svelte';
 	import { isAuthenticated, login } from '../api/auth';
+	import CharacterStatistics from './CharacterStatistics.svelte';
 
 	onMount(() => {
 		login();
@@ -13,6 +14,7 @@
 		<div class="dashboard">
 			<div class="dashboard-items">
 				<MemberStatistics />
+				<CharacterStatistics />
 			</div>
 		</div>
 	</div>
@@ -40,7 +42,7 @@
 
 	.dashboard-items {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		width: 100%;
 	}
 </style>
