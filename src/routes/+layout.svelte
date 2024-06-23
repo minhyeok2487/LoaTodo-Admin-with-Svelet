@@ -32,6 +32,7 @@
 	}
 
 	.content {
+		width: (100vw - 230px);
 		flex: 1;
 		overflow-y: auto;
 	}

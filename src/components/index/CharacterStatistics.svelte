@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Chart from 'chart.js/auto';
-	import { getCharactersDashboard } from '../api/home';
+	import { getCharactersDashboard } from '../../api/home';
 
 	const chartOptions = {
 		scales: {
@@ -54,4 +54,19 @@
 	});
 </script>
 
-<canvas id="character-statistics" />
+<div class="character-chart">
+	<canvas id="character-statistics" />
+</div>
+
+<style>
+	.character-chart {
+		width: 50%;
+		height: 100%;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+
+	canvas {
+		width: 100% !important;
+		height: 100% !important;
+	}
+</style>

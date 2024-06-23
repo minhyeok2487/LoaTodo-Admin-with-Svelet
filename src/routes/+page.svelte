@@ -1,8 +1,8 @@
 <script>
-	import MemberStatistics from './MemberStatistics.svelte';
+	import MemberStatistics from '../components/index/MemberStatistics.svelte';
 	import { onMount } from 'svelte';
 	import { isAuthenticated, isLogin } from '../api/auth';
-	import CharacterStatistics from './CharacterStatistics.svelte';
+	import CharacterStatistics from '../components/index/CharacterStatistics.svelte';
 
 	onMount(() => {
 		isLogin();
@@ -26,23 +26,27 @@
 <style>
 	.app {
 		font-family: Arial, sans-serif;
-		margin: 20px;
+		margin: 20px 0px 20px 0px;
 		width: 90%;
+		margin: 0px auto;
+		margin-top: 20px;
 	}
 
 	.dashboard {
 		background-color: #ecf0f1;
-		padding: 10px;
 		border-radius: 10px;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 		display: flex;
 		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 	}
 
 	.dashboard-items {
 		display: flex;
 		flex-direction: row;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 	}
 </style>

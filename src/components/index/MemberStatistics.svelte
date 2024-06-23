@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import Chart from 'chart.js/auto';
-	import { getMemberDashboard } from '../api/home';
+	import { getMemberDashboard } from '../../api/home';
 
 	const chartOptions = {
 		scales: {
@@ -54,4 +54,20 @@
 	});
 </script>
 
-<canvas id="member-statistics" />
+<div class="member-chart">
+	<canvas id="member-statistics" />
+</div>
+
+<style>
+	.member-chart {
+		width: 50%;
+		height: 100%;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		margin-right: 30px;
+	}
+
+	canvas {
+		width: 100% !important;
+		height: 100% !important;
+	}
+</style>
