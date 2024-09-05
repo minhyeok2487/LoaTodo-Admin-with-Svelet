@@ -1,12 +1,10 @@
 <script>
-	import FaPeople from 'svelte-icons/fa/FaUsers.svelte';
-	import FaSettings from 'svelte-icons/fa/FaCog.svelte';
-	import FaBarChart from 'svelte-icons/fa/FaChartBar.svelte';
+	import FaUsers from 'svelte-icons/fa/FaUsers.svelte';
+	import FaCommentAlt from 'svelte-icons/fa/FaCommentAlt.svelte';
 
 	let menuItems = [
-		{ name: 'Users', icon: FaPeople },
-		{ name: 'Settings', icon: FaSettings },
-		{ name: 'Statistics', icon: FaBarChart }
+		{ name: '회원 관리', icon: FaUsers, url: '/member' },
+		{ name: '방명록 관리', icon: FaCommentAlt, url: '/comment' }
 	];
 </script>
 
@@ -14,16 +12,16 @@
 	<ul>
 		{#each menuItems as item}
 			<li>
-				<a href="/{item.name.toLowerCase()}">
+				<a href="{item.url.toLowerCase()}">
 					<span class="icon">
 						<svelte:component this={item.icon} />
-					</span>
-					{item.name}
-				</a>
-			</li>
-		{/each}
-	</ul>
-</aside>
+						</span>
+						{item.name}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</aside>
 
 <style>
 	aside {

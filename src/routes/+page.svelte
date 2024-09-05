@@ -1,27 +1,16 @@
 <script>
 	import MemberStatistics from '../components/index/MemberStatistics.svelte';
-	import { onMount } from 'svelte';
-	import { isAuthenticated, isLogin } from '../api/auth';
 	import CharacterStatistics from '../components/index/CharacterStatistics.svelte';
-
-	onMount(() => {
-		isLogin();
-	});
 </script>
 
-{#if $isAuthenticated}
-	<div class="app">
-		<div class="dashboard">
-			<div class="dashboard-items">
-				<MemberStatistics />
-				<CharacterStatistics />
-			</div>
+<div class="app">
+	<div class="dashboard">
+		<div class="dashboard-items">
+			<MemberStatistics />
+			<CharacterStatistics />
 		</div>
 	</div>
-{:else}
-	<p>Please login.</p>
-	<!-- 로그인 폼 등을 보여줄 수 있음 -->
-{/if}
+</div>
 
 <style>
 	.app {

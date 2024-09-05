@@ -1,6 +1,12 @@
 <script>
+	import { onMount } from 'svelte';
 	import Navbar from '../components/Navbar.svelte';
 	import Sidebar from '../components/Sidebar.svelte';
+	import { isAuthenticated, isLogin } from '../api/auth';
+
+	onMount(() => {
+		isLogin();
+	});
 </script>
 
 <main>
@@ -8,7 +14,11 @@
 	<div class="container">
 		<Sidebar />
 		<div class="content">
-			<slot />
+			{#if $isAuthenticated}
+				<slot />
+			{:else}
+				<p>Please login.</p>
+			{/if}
 		</div>
 	</div>
 </main>

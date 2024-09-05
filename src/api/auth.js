@@ -1,4 +1,4 @@
-import { get, post, put, del, BASE_URL } from './api';
+import { get, BASE_URL } from './api';
 import { writable } from 'svelte/store';
 
 export async function getMember() {
